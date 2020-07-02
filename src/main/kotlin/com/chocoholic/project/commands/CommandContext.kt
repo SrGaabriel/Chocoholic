@@ -27,4 +27,8 @@ class CommandContext(
         return message.mentionedUsers.firstOrNull { it.asMention == arg.replace("!", "") }
     }
 
+    fun reply(message: String, prefix: String) {
+        channel.sendMessage("$prefix **➸** $message")
+    }
+
 }

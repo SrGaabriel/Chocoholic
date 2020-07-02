@@ -5,6 +5,6 @@ abstract class CommandHost(
     val internal: Boolean = false
 ) {
 
-    abstract fun handle(context: CommandContext)
+    abstract suspend fun handle(context: CommandContext)
 
 }

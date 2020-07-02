@@ -4,6 +4,7 @@ import club.minnced.jda.reactor.ReactiveEventManager
 import club.minnced.jda.reactor.on
 import com.chocoholic.project.handlers.ActionHandler
 import com.chocoholic.project.storage.DatabaseManager
+import com.chocoholic.project.threads.StatusThread
 import com.chocoholic.project.utils.ChocoholicConstants.projectScope
 import io.github.cdimascio.dotenv.dotenv
 import kotlinx.coroutines.Dispatchers
@@ -17,6 +18,10 @@ import net.dv8tion.jda.api.events.ReadyEvent
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import org.slf4j.LoggerFactory
+import java.io.ByteArrayOutputStream
+import java.io.ObjectOutputStream
+import java.io.OutputStream
+
 
 class Chocoholic {
 
@@ -43,8 +48,7 @@ class Chocoholic {
             jda.on<ReadyEvent>().subscribe {
                 ActionHandler(jda).loadCommands()
                 ActionHandler(jda).loadListeners()
-
-                jda.presence.setPresence(OnlineStatus.ONLINE, Activity.watching("as hortas do meu servidor!"))
+                StatusThread(jda).start()
             }
         }
 

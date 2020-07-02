@@ -25,6 +25,8 @@ dependencies {
 
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.5")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.5")
+
     api("org.koin:koin-core:2.1.0")
     api("io.github.cdimascio:java-dotenv:5.2.1")
     api("club.minnced:jda-reactor:1.0.0")

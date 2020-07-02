@@ -7,10 +7,12 @@ import org.jetbrains.exposed.sql.transactions.transaction
 object ChocoholicProfiles: LongIdTable(name = "chocoProfilesTable", columnName = "ID") {
 
     val hearts = long("hearts")
+    val likes = integer("likes")
 
     fun find(id: Long): ChocoholicProfile = transaction {
         ChocoholicProfile.findById(id) ?: ChocoholicProfile.new(id) {
             this.hearts = 0L
+            this.likes = 0
         }
     }
 

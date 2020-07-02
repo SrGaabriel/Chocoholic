@@ -8,10 +8,9 @@ class HelpCommand: CommandHost(
     name = "help"
 ) {
 
-    override fun handle(context: CommandContext) {
-        println("DEBUG6")
-        context.channel.sendMessage(embed("AJUDA - WonderLand") {
-            description = ""
+    override suspend fun handle(context: CommandContext) {
+        context.channel.sendMessage(embed("titulo") {
+            field("o ranni eh viado", "sim", false)
         }).queue()
     }
 

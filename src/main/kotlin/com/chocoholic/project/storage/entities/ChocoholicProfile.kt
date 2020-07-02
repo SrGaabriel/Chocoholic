@@ -10,5 +10,6 @@ class ChocoholicProfile(id: EntityID<Long>): LongEntity(id) {
     companion object: LongEntityClass<ChocoholicProfile>(ChocoholicProfiles)
 
     var hearts by ChocoholicProfiles.hearts
+    var likes by ChocoholicProfiles.likes
 
 }

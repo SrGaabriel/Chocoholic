@@ -10,5 +10,6 @@ object ChocoholicConstants {
     val projectScope = CoroutineScope(Dispatchers.Default + job)
 
     const val PREFIX = "?"
+    const val GUILD_ID = 260119800947277824L
 
 }
