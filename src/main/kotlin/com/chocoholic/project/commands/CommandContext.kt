@@ -16,4 +16,15 @@ class CommandContext(
 
     val channel = message.textChannel
 
+    fun getUser(argument: Int): User? {
+        if (rowedArgs.size-1 < argument) return null
+
+        val arg = rowedArgs[argument]
+
+        if (arg.toLongOrNull() != null) {
+            return message.jda.getUserById(arg)
+        }
+        return message.mentionedUsers.firstOrNull { it.asMention == arg.replace("!", "") }
+    }
+
 }

@@ -9,6 +9,6 @@ object ChocoholicConstants {
     val job = Job()
     val projectScope = CoroutineScope(Dispatchers.Default + job)
 
-    const val PREFIX = "@"
+    const val PREFIX = "?"
 
 }
